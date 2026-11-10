@@ -28,9 +28,19 @@ function Divisao(a, b){
     return resultado;
 }
 
+function Potencia(a, b){
+    let resultado = a ** b;
+    return resultado;
+}
+
+function Resto(a, b  ){
+    let resultado = a % b;
+    return resultado;
+}
+
 do{
     console.log("Digite uma opção");
-    let opcao = Number(teclado("1-Soma 2-Subtração 3-Multiplicação 4-Divisão: "));
+    let opcao = Number(teclado("1-Soma 2-Subtração 3-Multiplicação 4-Divisão 5-Potencia 6-Resto: "));
 
     switch(opcao){
         case 1:
@@ -55,13 +65,23 @@ do{
             y = Number(teclado("Digite outro valor: "));
             console.log("R:", x, "/", y, "=", Divisao(x, y));
             break;
+        case 5:
+            x = Number(teclado("Digite um valor: "));
+            y = Number(teclado("Digite outro valor: "));
+            console.log("R:", x, "^", y, "=", Potencia(x, y));
+            break;
+        case 6:
+            x = Number(teclado("Digite um valor: "));
+            y = Number(teclado("Digite outro valor: "));
+            console.log("R:", x, "%", y, "=", Resto(x, y));
+            break;
         default:
-            console.log("Nenhuma opção escolhida, SOMAR selecionado")
+            console.log("Nenhuma opção escolhida, SOMA selecionada")
             x = Number(teclado("Digite um valor: "));
             y = Number(teclado("Digite outro valor: "));
             console.log(Somar(x, y));
             break;
         }
         // pergunta se quer fazer outra operação e repete o bloco acima caso true
-        continuar = teclado(console.log("Deseja fazer outra operação?"))
+        continuar = teclado(console.log("Deseja fazer outra operação? (s/n)"))
     }while(continuar == "s");
